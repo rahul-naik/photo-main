@@ -9,12 +9,18 @@
     display: -o-flex;
     display: flex;
 }
+.flex-wrap{
+    flex-wrap: wrap;
+}
 
 .layout-center-center{
     align-items: center;
     justify-content: center;
 }
 
+.layout-column{
+    flex-direction: column;
+}
 .overflow-container{
     overflow: hidden;
 }
@@ -26,7 +32,9 @@
     background: #000;
     opacity: 0.3;
 }
-
+.column-layout{
+    flex-direction: column;
+}
 .gradient-masking{
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#030303+0,070707+3,0a0a0a+4,0a0a0a+5,151515+11,343434+24,454545+30,444444+30,4a4a4a+31,494949+32,595959+36,585858+37,a6a6a6+61,a7a7a7+62,b6b6b6+67,b8b8b8+68,c0c0c0+70,c0c0c0+71,c3c3c3+71,c2c2c2+72,c6c6c6+72,c7c7c7+73,d2d2d2+77,d4d4d4+78,d7d7d7+79,e2e2e2+84,e6e6e6+85,ececec+89,eeeeee+89,ffffff+100 */
     position: absolute;
@@ -38,6 +46,14 @@ background: -webkit-linear-gradient(top,  #030303 0%,#070707 3%,#0a0a0a 4%,#0a0a
 background: linear-gradient(to bottom,  #030303 0%,#070707 3%,#0a0a0a 4%,#0a0a0a 5%,#151515 11%,#343434 24%,#454545 30%,#444444 30%,#4a4a4a 31%,#494949 32%,#595959 36%,#585858 37%,#a6a6a6 61%,#a7a7a7 62%,#b6b6b6 67%,#b8b8b8 68%,#c0c0c0 70%,#c0c0c0 71%,#c3c3c3 71%,#c2c2c2 72%,#c6c6c6 72%,#c7c7c7 73%,#d2d2d2 77%,#d4d4d4 78%,#d7d7d7 79%,#e2e2e2 84%,#e6e6e6 85%,#ececec 89%,#eeeeee 89%,#ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#030303', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
 
+}
+
+.flex{
+    flex:1;
+}
+
+.no-padding{
+    padding:0;
 }
 
 /*
@@ -74,9 +90,10 @@ nav ul li a{
 section{
     position: relative;
 }
-#home,#portfolio{
+#home,#portfolio,#about,#contactUs{
     min-height: 640px;
 }
+
 span.name{
 
      font-size: 40px;
@@ -104,6 +121,115 @@ span.occupation{
         font-size: 40px;
     }
 
+
+/*
+*Album section
+*/
+div.album-text{
+    background: #000;
+}
+div.album-text p{
+    font-size: 13px;
+    color:#4ba4b3;
+    font-family:'Roboto-Thin';
+    padding: 0 30px;
+    margin: 0;
+}
+
+.flex-width{
+    width: 100%;
+}
+
+.flex-width >  div{
+        width:50%;
+    }
+
+.album-container >div:nth-child(2n) .album-text{
+    order:2;
+}
+
+.order-2{
+    order: 2;
+}
+.self-name{
+    margin-top:10px;
+    font-size: 30px;
+    font-family: "Roboto-Thin";
+}
+.self-image{
+        margin:auto;
+}
+
+.input-box{
+    border-radius: 22px;
+}
+
+.send-btn,.send-btn:hover,.send-btn:focus,.send-btn:active{
+    color:#FFF;
+    background: #9933ca;
+    border:none;
+     border-radius: 22px;
+     width: 100%;
+}
+
+.copyright{
+    font-size: 15px;
+    color:#FFF;
+    position: relative;
+    opacity: 0.4;
+}
+
+.backTop a {
+    color:#FFF;
+    text-decoration: none;
+    font-size: 21px;
+}
+
+footer{
+        height:230px;
+        background: #333333;
+    }
+
+.socials{
+        position: fixed;
+        width:50px;
+        z-index: 100;
+        top: 50%;
+        left: 5%;
+    }
+    .socials ul {
+        list-style-type: none;
+        margin:0;
+        padding:0;
+    }
+
+    .socials ul li {
+        display: block;
+        margin:5px 0;
+    }
+
+     .socials ul li a{
+        display: block;
+        padding:20px 0;
+        height:32px;
+        width:32px;
+    }
+
+    .socials ul li a.fb{
+        background: url('../images/fb.png') no-repeat center center;
+    }
+    .socials ul li a.tw{
+        background: url('../images/twitter.png') no-repeat center center;
+    }
+    .socials ul li a.tube{
+        background: url('../images/youtube.png') no-repeat center center;
+    }
+    .socials ul li a.pin{
+        background: url('../images/pinterest.png') no-repeat center center;
+    }
+    .socials ul li a.messenger{
+        background: url('../images/messenger.png') no-repeat center center;
+    }
 /*
 *Media Queries
 */
@@ -117,8 +243,11 @@ span.occupation{
         font-size: 20px;
     }
 
-    #home,#portfolio{
+    #home{
         min-height: 774px;
+    }
+    #portfolio,#about,#aboutMe,#contactUs{
+        min-height: 610px;
     }
     .main-heading, .portfolio-desc{
         font-size: 55px;
@@ -129,4 +258,49 @@ span.occupation{
     .portfolio-desc{
         color:#bebebe;
     }
+    .flex-width >  div{
+        width:50%;
+    }
+    .layout-column{
+        flex-direction: row;
+    }
+    .order-2{
+        order: 0;
+    }
+    div.album-text{
+        background: #000;
+        height: auto;
+    }
+    div.album-text p{
+        padding:0 50px;
+        font-size: 17px;
+    }
+    .flex-width{
+        width: 50%;
+    }
+    .album-container >div:nth-child(2n) .album-text{
+        order:0;
+    }
+    .album-container >div:nth-child(4n+3) .album-text,.album-container >div:nth-child(4n+4) .album-text{
+        order:2;
+    }
+    .about-portfolio{
+        width:760px;
+    }
+
+    .self-name{
+        font-size: 67px;
+        font-family: 'Roboto-Thin';
+         margin-top:0; 
+    }
+
+    .self-description{
+        font-size: 13px;
+    }
+    .self-image{
+        float: right;
+    }
+    
+
+    
 }
