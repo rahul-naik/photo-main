@@ -74,6 +74,10 @@ body{
     font-family: 'Roboto-Regular';
 }
 
+nav{
+    background: #FFF;
+}
+
 nav ul li a{
     color: #000;
     font-size: 15px;
@@ -90,7 +94,7 @@ nav ul li a{
 section{
     position: relative;
 }
-#home,#portfolio,#about,#contactUs{
+#home,#portfolio,#about,#contactUs,#aboutMe{
     min-height: 640px;
 }
 
@@ -151,14 +155,24 @@ div.album-text p{
 .order-2{
     order: 2;
 }
+
+/*
+* About Me
+*/
 .self-name{
     margin-top:10px;
     font-size: 30px;
     font-family: "Roboto-Thin";
 }
 .self-image{
-        margin:auto;
+    margin: 10px auto;
 }
+#aboutMe > div{
+    flex-direction: column;
+}
+/*
+*Contact Us
+*/
 
 .input-box{
     border-radius: 22px;
@@ -188,7 +202,7 @@ div.album-text p{
 footer{
         height:230px;
         background: #333333;
-    }
+}
 
 .socials{
         position: fixed;
@@ -301,6 +315,23 @@ footer{
         float: right;
     }
     
-
+	#aboutMe > div{
+		flex-direction:row;
+	}
     
+}
+
+@media only screen and (min-width : 768px) and (orientation: portrait) {
+    .about-portfolio{
+        width:500px;
+    }
+    .full-width{
+        width: 100%;
+    }
+    div.album-text p {
+        font-size: 17px;
+    }
+    #aboutMe > div{
+        flex-direction: row;
+    }
 }
