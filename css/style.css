@@ -203,6 +203,10 @@ footer{
         height:230px;
         background: #333333;
 }
+#album img{
+        height:133px;
+        width: 100%;
+    }
 
 .socials{
         position: fixed;
@@ -244,9 +248,31 @@ footer{
     .socials ul li a.messenger{
         background: url('../images/messenger.png') no-repeat center center;
     }
+
+    .socials ul li a.fb.grayed{
+        background: url('../images/fb-gray.png') no-repeat center center;
+    }
+    .socials ul li a.tw.grayed{
+        background: url('../images/twitter-gray.png') no-repeat center center;
+    }
+    .socials ul li a.tube.grayed{
+        background: url('../images/youtube-gray.png') no-repeat center center;
+    }
+    .socials ul li a.pin.grayed{
+        background: url('../images/pinterest-gray.png') no-repeat center center;
+    }
+    .socials ul li a.messenger.grayed{
+        background: url('../images/messenger-gray.png') no-repeat center center;
+    }
 /*
 *Media Queries
 */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    #album img{
+        height:200px;
+        width: 100%;
+    }
+}
   @media only screen and (min-width: 992px) {
       span.name{
            font-size: 64px;
@@ -260,6 +286,10 @@ footer{
     #home{
         min-height: 774px;
     }
+    #album img{
+        height:250px;
+    }
+
     #portfolio,#about,#aboutMe,#contactUs{
         min-height: 610px;
     }
@@ -313,6 +343,8 @@ footer{
     }
     .self-image{
         float: right;
+        width:277px;
+        height:415px;
     }
     
 	#aboutMe > div{
@@ -333,5 +365,9 @@ footer{
     }
     #aboutMe > div{
         flex-direction: row;
+    }
+    #album img{
+        height:250px;
+        width: 100%;
     }
 }
