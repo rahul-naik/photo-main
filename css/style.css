@@ -93,6 +93,7 @@ nav ul li a{
 */
 section{
     position: relative;
+    background-attachment: fixed !important;
 }
 #home,#portfolio,#about,#contactUs,#aboutMe{
     min-height: 640px;
@@ -232,6 +233,13 @@ footer{
         height:32px;
         width:32px;
     }
+    a.fb{
+        background: url('../images/fb.png') no-repeat center center;
+        display: block;
+        padding:20px 0;
+        height:32px;
+        width:32px;
+    }   
 
     .socials ul li a.fb{
         background: url('../images/fb.png') no-repeat center center;
