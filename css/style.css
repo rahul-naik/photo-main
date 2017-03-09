@@ -94,6 +94,8 @@ nav ul li a{
 section{
     position: relative;
     background-attachment: fixed !important;
+    background-repeat: no-repeat;
+        background-size: cover;
 }
 #home,#portfolio,#about,#contactUs,#aboutMe{
     min-height: 640px;

@@ -31,71 +31,19 @@ $(function () {
         }
     });
 
-    $(window).on('scroll', function () {
-        if ($('#dDiv').css('display') !== 'none') {
-            if ($('.fb').offset().top > 2744 && $('.fb').offset().top < 3354) {
-                $('.fb').addClass('grayed');
-            } else {
-                $('.fb').removeClass('grayed');
-            }
+   $('.parallax').each(function(){
+        var $bgobj = $(this); // assigning the object
+    
+        $(window).scroll(function() {
+           var yPos = -( ($(window).scrollTop() - $bgobj.offset().top) / $bgobj.data('speed'));
+            
+            // Put together our final background position
+            var coords = '50% '+ yPos + 'px';
 
-            if ($('.tw').offset().top > 2744 && $('.tw').offset().top < 3354) {
-                $('.tw').addClass('grayed');
-            } else {
-                $('.tw').removeClass('grayed');
-            }
-
-            if ($('.tube').offset().top > 2744 && $('.tube').offset().top < 3354) {
-                $('.tube').addClass('grayed');
-            } else {
-                $('.tube').removeClass('grayed');
-            }
-
-            if ($('.pin').offset().top > 2744 && $('.pin').offset().top < 3354) {
-                $('.pin').addClass('grayed');
-            } else {
-                $('.pin').removeClass('grayed');
-            }
-
-            if ($('.messenger').offset().top > 2744 && $('.messenger').offset().top < 3354) {
-                $('.messenger').addClass('grayed');
-            } else {
-                $('.messenger').removeClass('grayed');
-            }
-        } else {
-            if ($('.fb').offset().top > 2609 && $('.fb').offset().top < 3597) {
-                $('.fb').addClass('grayed');
-            } else {
-                $('.fb').removeClass('grayed');
-            }
-
-            if ($('.tw').offset().top > 2609 && $('.tw').offset().top < 3597) {
-                $('.tw').addClass('grayed');
-            } else {
-                $('.tw').removeClass('grayed');
-            }
-
-            if ($('.tube').offset().top > 2609 && $('.tube').offset().top < 3597) {
-                $('.tube').addClass('grayed');
-            } else {
-                $('.tube').removeClass('grayed');
-            }
-
-            if ($('.pin').offset().top > 2609 && $('.pin').offset().top < 3597) {
-                $('.pin').addClass('grayed');
-            } else {
-                $('.pin').removeClass('grayed');
-            }
-
-            if ($('.messenger').offset().top > 2609 && $('.messenger').offset().top < 3597) {
-                $('.messenger').addClass('grayed');
-            } else {
-                $('.messenger').removeClass('grayed');
-            }
-        }
-
-
-    });
+            // Move the background
+            $bgobj.css({ backgroundPosition: coords });
+        }); 
+    });    
 
 
 });
