@@ -31,6 +31,8 @@
     width: 100%;
     background: #000;
     opacity: 0.3;
+    top:0;
+    left:0;
 }
 .column-layout{
     flex-direction: column;
@@ -95,10 +97,11 @@ section{
     position: relative;
     background-attachment: fixed !important;
     background-repeat: no-repeat;
-        background-size: cover;
+    background-size: 100% 100%;
+    background-position-y: 0;
 }
 #home,#portfolio,#about,#contactUs,#aboutMe{
-    min-height: 640px;
+   min-height: 640px;
 }
 
 span.name{
@@ -284,24 +287,25 @@ footer{
     }
 }
   @media only screen and (min-width: 992px) {
-      span.name{
+    span.name{
            font-size: 64px;
-       
     }
     span.occupation{
-       
         font-size: 20px;
     }
-
+    section{
+   
+    background-size: cover;
+}    
     #home{
-        min-height: 774px;
+        height: 774px;
     }
     #album img{
         height:250px;
     }
 
     #portfolio,#about,#aboutMe,#contactUs{
-        min-height: 610px;
+        height: 610px;
     }
     .main-heading, .portfolio-desc{
         font-size: 55px;
